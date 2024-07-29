@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.centerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 640px;
+    max-height: 640px;
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#test{
+    width: 96px;
+    height: 96px;
+    background-color: red;
+}
+
+.newGridButton{
+    max-width: fit-content;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    background-color: beige;
+}
+
+.centerButton{
+    display: flex;
+    justify-content: center;
+}
