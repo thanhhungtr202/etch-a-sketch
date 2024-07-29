@@ -2,9 +2,11 @@ const defaultGrid = 10;
 const outDiv = document.querySelector(".centerContainer");
 const newGridButton = document.querySelector(".newGridButton");
 
-
-
-let gridContainer;
+//Creating and selecting grid container
+let divContainer = document.createElement("div");
+divContainer.classList.add("container");
+outDiv.appendChild(divContainer);
+let gridContainer = document.querySelector(".container");
 
 
 //Create grid
@@ -24,25 +26,16 @@ let createGrid = (numberOfDiv) => {
 }
 
 newGridButton.addEventListener("click", ()=> {
-    //Resetting grid
-    //created Element persist changes made to it
-
     //Empty container
-    outDiv.innerHTML = '';
-
-    //Create new container
-    let divContainer = document.createElement("div");
-    divContainer.classList.add("container");
-    outDiv.appendChild(divContainer);
-
-    //Selecting new container
-    gridContainer = document.querySelector(".container");
+    while(gridContainer.firstChild){
+        gridContainer.removeChild(gridContainer.firstChild);
+    }
 
     let newNumberOfDiv = 120;
     while(newNumberOfDiv > 100){
         newNumberOfDiv = parseInt(prompt("Please enter your grid size: "));
     }
-    console.log(newNumberOfDiv);
     createGrid(newNumberOfDiv);
 })
 
+createGrid(defaultGrid);
